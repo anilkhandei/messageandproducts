@@ -1,6 +1,18 @@
 # Multipleservicecall
+This project was generated with Angular CLI version 6.2.4.
+## Purpose
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+This project describes the usage of RXJS --> forkJoin to make parallel api calls
+
+```typescript
+ngOnInit() {
+    forkJoin([this._mService.getMessage(),this._pService.getProducts()])
+    .subscribe(response=>{
+      this.messageData=response[0];
+      this.productsData=response[1];
+    })
+  }
+```
 
 ## Development server
 
